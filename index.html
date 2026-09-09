@@ -1,0 +1,1020 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title> SKY NET | Login </title>
+<style>:root{--primary:#ff1a1a;--success:#28a745;--bg:#000000;--card-glass:#0c0c0c;--p150-grad:linear-gradient(90deg,#8b5cf6,#00e5ff,#d946ef);--yellow:#ffff00;--purple:#8b5cf6;--teal:#008080;--disabled-blue:#2c3e50}html,body{margin:0;padding:0;background-color:var(--bg);color:#ffffff;font-family:'Segoe UI',Arial,sans-serif;overflow-x:hidden;scroll-behavior:smooth}body{display:flex;flex-direction:column;align-items:center}.main-card{background:var(--card-glass);width:100%;max-width:550px;padding:5px 15px 20px 15px;position:relative;box-sizing:border-box;display:flex;flex-direction:column;z-index:5}.logo-area{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;overflow:hidden;margin-bottom:0;padding:20px 0 4px 0;transition:padding-bottom 1.5s cubic-bezier(0.4,0,0.2,1)}
+.logo-container{display:flex;flex-direction:column;align-items:flex-start;width:100%}
+.logo-main-row{display:flex;align-items:center;gap:16px;margin-bottom:5px}
+.logo-icon-box{width:62px;height:62px;border-radius:18px;border:2px solid;border-image:linear-gradient(135deg,#ff1a1a,#ff6b00,#ffff00,#8b5cf6) 1;background:#0d0d0d;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 0 20px rgba(255,26,26,0.25),0 0 40px rgba(139,92,246,0.1);position:relative;border-radius:18px;outline:2px solid transparent;outline-offset:0px}
+.logo-icon-box::after{content:'';position:absolute;inset:-2px;border-radius:20px;background:linear-gradient(135deg,#ff1a1a,#ff6b00,#ffff00,#8b5cf6);z-index:-1}
+.logo-icon-box-inner{width:62px;height:62px;border-radius:18px;background:#0d0d0d;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.logo-icon-box svg{width:40px;height:40px;filter:drop-shadow(0 0 8px rgba(255,180,0,0.7))}
+.logo-text-col{display:flex;flex-direction:column;gap:3px;align-items:center}
+.brand-name{font-size:52px;font-weight:950;margin:0;letter-spacing:7px;white-space:nowrap;background:linear-gradient(90deg,#ff1a1a,#ff6b00,#ffff00,#ffffff,#8b5cf6,#ff1a1a);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbow_shift 3s linear infinite;line-height:1;text-shadow:none}
+.by-rabbi-alam{font-size:11.5px;font-weight:600;color:rgba(255,255,255,0.3);letter-spacing:0.5px;font-family:'Segoe UI',Arial,sans-serif;margin:0}
+.logo-tagline{font-size:11.5px;font-weight:700;color:rgba(255,255,255,0.45);margin-top:8px;text-align:left;letter-spacing:0.3px;padding-left:2px;white-space:nowrap}
+.logo-divider{width:100%;height:1.5px;background:linear-gradient(90deg,#ff1a1a,#ff6b00,#ffff00,#8b5cf6,transparent);margin:4px 0 0 0;border-radius:2px;opacity:0.7}.critical-error-page{display:none;background:#0d0d0d;padding:28px 15px;border-radius:20px;margin-top:180px;margin-bottom:10px;text-align:center;border:1px solid rgba(255,255,255,0.08);box-shadow:0 10px 30px rgba(0,0,0,0.9);animation:popCritical 0.45s cubic-bezier(0.34,1.56,0.64,1)}@keyframes moveBorderLight{0%{background-position:0% 50%}100%{background-position:200% 50%}}.critical-msg{margin:0 auto;padding:18px 10px 8px 10px;border-radius:12px;border:3px solid transparent;background:linear-gradient(#0d0d0d,#0d0d0d) padding-box,linear-gradient(90deg,#ff1a1a,#ffff00,#00e5ff,#8b5cf6,#ff1a1a) border-box;background-size:200% 100%;animation:moveBorderLight 4s linear infinite;box-shadow:0 5px 15px rgba(0,0,0,0.5)}
+.critical-icon-badge{width:58px;height:58px;line-height:58px;font-size:26px;margin:0 auto 14px auto;border-radius:50%;background:radial-gradient(circle at 32% 30%,#1c1c1c,#080808);box-shadow:0 0 0 3px rgba(255,255,255,0.06),0 0 22px rgba(255,26,26,0.4);animation:iconPulse 1.8s ease-in-out infinite}
+@keyframes iconPulse{0%,100%{transform:scale(1);box-shadow:0 0 0 3px rgba(255,255,255,0.06),0 0 18px rgba(255,26,26,0.3)}50%{transform:scale(1.08);box-shadow:0 0 0 3px rgba(255,255,255,0.1),0 0 30px rgba(255,26,26,0.6)}}
+.critical-title{font-size:clamp(15px,4.3vw,19px);font-weight:900;color:#fff;line-height:1.55;margin-bottom:10px;letter-spacing:0.2px}
+.critical-sub{font-size:clamp(13px,3.8vw,15px);font-weight:600;color:#b9bdc4;line-height:1.55}body.mac-active .main-card{padding-bottom:0}
+#mac-error{display:none;position:relative;background:#000;padding:34px 20px 10px 20px;border-radius:24px;margin-top:20px;margin-bottom:0;text-align:center;border:1px solid rgba(255,255,255,0.07);box-shadow:0 20px 50px rgba(0,0,0,0.9);overflow:hidden;animation:macCardIn 0.55s cubic-bezier(0.34,1.56,0.64,1)}
+#mac-error::before{content:"";position:absolute;top:-45%;left:-20%;width:140%;height:140%;background:radial-gradient(circle,rgba(255,26,26,0.12) 0%,transparent 60%);animation:macGlowDrift 6s ease-in-out infinite alternate;pointer-events:none}
+#mac-error::after{display:none}
+@keyframes macBorderSweep{0%{background-position:0% 0%}100%{background-position:200% 200%}}
+@keyframes macCardIn{0%{transform:scale(0.92) translateY(12px);opacity:0}100%{transform:scale(1) translateY(0);opacity:1}}
+@keyframes macGlowDrift{0%{transform:translate(0,0)}100%{transform:translate(8%,8%)}}
+.mac-scan{position:relative;z-index:1;width:88px;height:88px;margin:0 auto 16px auto;display:flex;align-items:center;justify-content:center}
+.mac-scan::before{content:"";position:absolute;inset:-8px;border-radius:50%;background:conic-gradient(from 0deg,#ff1a1a,#ff6b00,#ffff00,#00e676,#00e5ff,#8b5cf6,#ff1a80,#ff1a1a);animation:macSweep 2.4s linear infinite;filter:blur(2px) saturate(1.3);opacity:0.95;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 3px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 3px))}
+@keyframes macSweep{to{transform:rotate(360deg)}}
+.mac-ring{position:absolute;width:100%;height:100%;border-radius:50%;border:1.5px solid rgba(255,59,59,0.6);animation:macRingPulse 2.4s cubic-bezier(0.2,0.7,0.4,1) infinite}
+.mac-ring.r1{animation-delay:0s;border-color:rgba(255,26,26,0.7)}
+.mac-ring.r2{animation-delay:0.8s;border-color:rgba(255,107,0,0.65)}
+.mac-ring.r3{animation-delay:1.6s;border-color:rgba(139,92,246,0.65)}
+@keyframes macRingPulse{0%{transform:scale(0.45);opacity:0.9}100%{transform:scale(1.35);opacity:0}}
+.mac-icon-badge{position:relative;z-index:2;width:60px;height:60px;line-height:60px;font-size:27px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#2a1620,#0a0303);box-shadow:0 0 0 3px rgba(255,107,0,0.25),0 0 26px rgba(255,26,26,0.55),0 0 42px rgba(139,92,246,0.3);animation:macIconPulse 1.9s ease-in-out infinite,macGlowCycle 4s ease-in-out infinite,macIconFlicker 3.6s ease-in-out infinite}
+@keyframes macIconPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+@keyframes macGlowCycle{0%,100%{box-shadow:0 0 0 3px rgba(255,26,26,0.35),0 0 32px rgba(255,26,26,0.65),0 0 50px rgba(255,26,26,0.28)}20%{box-shadow:0 0 0 3px rgba(255,107,0,0.35),0 0 32px rgba(255,107,0,0.65),0 0 50px rgba(255,107,0,0.28)}40%{box-shadow:0 0 0 3px rgba(255,230,0,0.32),0 0 32px rgba(255,230,0,0.6),0 0 50px rgba(255,230,0,0.25)}60%{box-shadow:0 0 0 3px rgba(0,229,255,0.32),0 0 32px rgba(0,229,255,0.6),0 0 50px rgba(0,229,255,0.25)}80%{box-shadow:0 0 0 3px rgba(139,92,246,0.35),0 0 32px rgba(139,92,246,0.65),0 0 50px rgba(139,92,246,0.28)}}
+@keyframes macIconFlicker{0%,90%,100%{filter:drop-shadow(0 0 0 rgba(255,255,255,0))}92%{filter:drop-shadow(0 0 9px rgba(255,255,255,0.9)) brightness(1.5)}94%{filter:drop-shadow(0 0 0 rgba(255,255,255,0))}96%{filter:drop-shadow(0 0 9px rgba(255,255,255,0.9)) brightness(1.5)}}
+.mac-title-ohno{position:relative;z-index:1;font-size:clamp(17px,5vw,22px);font-weight:900;margin:0;letter-spacing:0.2px;line-height:1.3;background:linear-gradient(90deg,#ff1a1a,#ff6b00,#ffff00,#00e5ff,#8b5cf6,#ff1a1a);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbow 3s linear infinite}
+.mac-alert-sub{position:relative;z-index:1;display:inline-flex;align-items:center;gap:6px;margin:10px auto 0 auto;padding:5px 14px;border-radius:20px;background:linear-gradient(90deg,rgba(255,26,26,0.18),rgba(139,92,246,0.18));border:1px solid rgba(255,107,0,0.4);color:#ff9d4d;font-size:12px;font-weight:800;letter-spacing:0.3px}
+.mac-desc{position:relative;z-index:1;font-size:13px;color:#b6bac1;margin:14px auto 0 auto;line-height:1.7;max-width:100%;white-space:normal}
+
+
+
+.mac-steps{position:relative;z-index:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,107,0,0.25);border-radius:16px;padding:16px 14px;text-align:left;box-shadow:inset 0 0 20px rgba(139,92,246,0.06)}
+.mac-step-item{font-size:13.8px;color:#e8e8e8;font-weight:700;line-height:1.5;margin-bottom:14px;display:flex;align-items:flex-start;gap:12px;opacity:0;animation:macStepIn 0.45s ease-out forwards}
+.mac-step-item:last-child{margin-bottom:0}
+.mac-step-item:nth-child(1){animation-delay:0.1s}
+.mac-step-item:nth-child(2){animation-delay:0.22s}
+.mac-step-item:nth-child(3){animation-delay:0.34s}
+.mac-step-item:nth-child(4){animation-delay:0.46s}
+@keyframes macStepIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+.mac-step-num{flex-shrink:0;width:24px;height:24px;line-height:24px;text-align:center;font-size:12px;font-weight:950;color:#fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.4)}
+.mac-step-item:nth-child(1) .mac-step-num{background:linear-gradient(135deg,#ff1a1a,#ff6b00)}
+.mac-step-item:nth-child(2) .mac-step-num{background:linear-gradient(135deg,#f59e0b,#ffe600)}
+.mac-step-item:nth-child(3) .mac-step-num{background:linear-gradient(135deg,#00c2b8,#00e5ff)}
+.mac-step-item:nth-child(4) .mac-step-num{background:linear-gradient(135deg,#8b5cf6,#d946ef)}
+.mac-step-dot{width:14px !important;height:14px !important;border-radius:50% !important;background:#22c55e !important;box-shadow:0 0 8px rgba(34,197,94,0.7) !important;margin-top:3px}
+.mac-note-text{color:#3ddc84 !important;font-weight:800;font-size:9.5px}
+.mac-step-text b{color:var(--yellow,#ffff00);font-weight:900}
+
+
+
+
+
+
+
+.sub-tag{color:#8e959f;font-size:13px;display:block;text-align:left;margin-bottom:15px;margin-top:-5px}
+.top-col{display:flex;flex-direction:column;gap:6px}
+.col-label{font-size:15px;font-weight:950;text-align:center;text-transform:uppercase;letter-spacing:1.5px;background:linear-gradient(90deg,#ff1a1a,#ff6b00,#ffff00,#00e5ff,#8b5cf6,#ff1a1a);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbow 3s linear infinite}.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:none;align-items:center;justify-content:center;z-index:99999;text-align:center;padding:20px;box-sizing:border-box;backdrop-filter:blur(4px);animation:overlayFadeIn 0.25s ease}@keyframes overlayFadeIn{from{opacity:0}to{opacity:1}}.modal-card{background:#0c0c0c;border:2.5px solid var(--primary);border-radius:20px;width:auto;max-width:340px;min-width:260px;padding:22px 22px 18px 22px;box-shadow:0 0 10px rgba(255,26,26,0.2);animation:fastPop 0.32s cubic-bezier(0.34,1.56,0.64,1);display:inline-block}@keyframes fastPop{from{transform:scale(0.9);opacity:0}to{transform:scale(1);opacity:1}}@keyframes popCritical{from{transform:scale(0.9);opacity:0}to{transform:scale(1);opacity:1}}@keyframes popModal{from{transform:scale(0.9);opacity:0}to{transform:scale(1);opacity:1}}@keyframes popVoucher{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}@keyframes rippleFade{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.08)}}.modal-card h3{color:var(--yellow);text-align:center;margin-bottom:16px;font-weight:950;font-size:15px}.modal-close{background:var(--success);color:white;border:none;height:46px;padding:0 40px;width:auto;min-width:160px;border-radius:50px;font-weight:950;cursor:pointer;margin-top:14px;font-size:15px;display:inline-block;transition:transform 0.1s cubic-bezier(0,0,0.2,1)}.modal-close:active{transform:scale(0.92)}.top-row{display:flex;gap:10px;margin-bottom:10px;align-items:stretch;transition:margin-bottom 1.5s cubic-bezier(0.4,0,0.2,1)}.pay-card{flex:1.1;background:var(--primary);border-radius:18px;padding:8px 2px;text-align:center;cursor:pointer;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;transition:transform 0.1s cubic-bezier(0,0,0.2,1),filter 0.1s ease}.pay-card:active{transform:scale(0.88) !important;filter:brightness(0.8)}.pay-text{font-size:19px;font-weight:700;color:#ffffff;display:block;margin-bottom:2px;letter-spacing:-0.8px;white-space:nowrap;text-shadow:0 2px 4px rgba(0,0,0,0.4);text-transform:uppercase}.pay-num{font-size:19px;font-weight:990;display:block;margin:6px 0 8px 0;letter-spacing:0.5px;white-space:nowrap;color:#ffff00;text-shadow:0 2px 4px rgba(0,0,0,0.4)}.mini-pkgs{flex:1.3;display:grid;grid-template-columns:1fr 1fr;gap:8px}.mini-item{border-radius:12px;padding:12px 5px;text-align:center;border:1px solid rgba(255,255,255,0.2);cursor:pointer;transition:transform 0.1s cubic-bezier(0,0,0.2,1),filter 0.1s ease}.mini-item:active{transform:scale(0.88);filter:brightness(0.8)}.p-price{font-weight:750;font-size:19px;display:block;line-height:1;text-align:center}.p-limit{font-weight:650;font-size:13px;display:block;margin-top:3px;text-align:center}.p1{background:var(--teal)}.p2{background:#3b82f6}.p3{background:var(--purple)}.p4{background:#f59e0b}.special-offer-card{position:relative;background:var(--p150-grad);background-size:400%;border-radius:18px;padding:12px 15px;margin-bottom:10px;border:2.5px solid #fff;text-align:center;cursor:pointer;overflow:hidden;transition:transform 0.1s cubic-bezier(0,0,0.2,1),filter 0.1s ease}.special-offer-card:active{transform:scale(0.88);filter:brightness(0.8)}.offer-badge{position:absolute;top:0;right:0;background:linear-gradient(135deg,#ff0000,#ff7f00,#ffff00,#00ff00,#0000ff,#4b0082,#9400d3);background-size:300% 300%;color:#fff;padding:4px 12px;font-size:10px;font-weight:950;border-bottom-left-radius:12px;text-transform:uppercase;box-shadow:-2px 2px 10px rgba(0,0,0,0.3);z-index:3;animation:prism_shift 4s linear infinite}.old-price{color:var(--yellow);font-size:20px;font-weight:700;position:relative;display:inline-block}.old-price::after{content:"";position:absolute;left:-5%;top:50%;width:110%;height:3px;background-color:#ff1a1a;transform:rotate(-15deg);box-shadow:0 0 4px rgba(0,0,0,0.5)}.new-price-small{font-size:29px;font-weight:700;margin-left:11px}.v-input{width:100%;height:46px;background:#000;border:2.5px solid transparent;border-radius:50px;color:#fff;text-align:center;font-weight:950;margin-bottom:8px;outline:none;box-sizing:border-box;font-size:15px;line-height:46px;padding:0;background-image:linear-gradient(#000,#000),linear-gradient(90deg,#ff1a1a,#ff6b00,#ffff00,#00e5ff,#8b5cf6,#d946ef,#ff1a1a);background-origin:border-box;-webkit-background-clip:padding-box,border-box;background-clip:padding-box,border-box;transition:transform 0.1s cubic-bezier(0,0,0.2,1)}.v-input.error-state{background-image:linear-gradient(#000,#000),linear-gradient(90deg,#8b0000,#8b0000) !important;color:#ff5c5c !important;font-weight:950 !important}#voucher-check{display:none;position:absolute;top:23px;right:12px;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:#28a745;align-items:center;justify-content:center;z-index:10;font-size:13px;font-weight:900;color:#fff;box-shadow:0 0 6px rgba(40,167,69,0.5);cursor:pointer;transition:background 0.2s,box-shadow 0.2s,transform 0.15s;line-height:1;text-align:center}#voucher-check.locked{background:#f59e0b;box-shadow:0 0 8px rgba(245,158,11,0.6);font-size:13px}#voucher-check:active{transform:translateY(-50%) scale(0.82)}.submit-btn{width:180px;height:47px;background:var(--success);color:#fff;border:none;border-radius:50px;font-weight:950;cursor:pointer;margin:15px auto 0 auto;display:block;font-size:15px;transition:transform 0.1s cubic-bezier(0,0,0.2,1),background 0.1s ease;box-shadow:0 5px 15px rgba(40,167,69,0.2)}.btn-disabled{background:#111 !important;color:rgba(255,255,255,0.5) !important;box-shadow:none !important;border:none !important;cursor:not-allowed;position:relative;overflow:hidden;isolation:isolate}.btn-disabled::before{content:none}.submit-btn:active{transform:scale(0.88) !important}.timer-overlay{position:absolute;top:0;left:0;width:100%;height:54px;background:#000;border:2.5px solid var(--yellow);border-radius:50px;color:var(--yellow);display:none;align-items:center;justify-content:center;font-weight:950;z-index:10;box-sizing:border-box}.verify-dots{display:inline-flex;align-items:flex-end;gap:2px;margin-left:3px;height:10px}.verify-dots span{width:5px;height:5px;border-radius:50%;background:var(--yellow);display:inline-block;animation:verifyWave 1.1s ease-in-out infinite}.verify-dots span:nth-child(1){animation-delay:0s}.verify-dots span:nth-child(2){animation-delay:0.15s}.verify-dots span:nth-child(3){animation-delay:0.3s}@keyframes verifyWave{0%,60%,100%{transform:translateY(0);opacity:0.5}30%{transform:translateY(-6px);opacity:1}}@keyframes errorShakeIn{0%{transform:translateX(0) scale(0.92);opacity:0}20%{transform:translateX(-7px) scale(1.03);opacity:1}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(2px)}100%{transform:translateX(0) scale(1)}}.timer-overlay.err-active{border-width:3px !important;border-radius:18px !important;letter-spacing:0.2px;text-shadow:0 1px 2px rgba(0,0,0,0.9);padding:8px 14px;text-align:center;line-height:1.3;background:#1a0000 !important;font-weight:950 !important;white-space:normal;height:auto;min-height:54px;animation:errorShakeIn 0.45s cubic-bezier(0.36,0.07,0.19,0.97)}.voucher-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);display:none;align-items:flex-start;justify-content:center;z-index:9999999;backdrop-filter:blur(4px);padding-top:220px;box-sizing:border-box}.voucher-popup-overlay.active{display:flex}.voucher-popup-box{position:relative;width:88%;max-width:420px;background:#0d0d0d;border-radius:20px;padding:25px 20px 28px 20px;box-sizing:border-box;animation:popVoucher 0.05s cubic-bezier(0.34,1.56,0.64,1);border:2px solid rgba(255,255,255,0.1);box-shadow:0 20px 60px rgba(0,0,0,0.9)}@keyframes vPopIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}.voucher-popup-close{position:absolute;top:8px;left:8px;width:28px;height:28px;border-radius:50%;background:linear-gradient(145deg, #7dd3fc, #0284c7);border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:16px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.7), inset 0 -2px 3px rgba(0,0,0,0.35);transition:color 0.2s,transform 0.1s cubic-bezier(0,0,0.2,1);line-height:1}.voucher-popup-close:active{transform:scale(0.9);box-shadow:0 1px 3px rgba(0,0,0,0.5), inset 0 1px 3px rgba(0,0,0,0.4)}.voucher-popup-close:hover{color:#fff}.voucher-popup-title{font-size:14px;font-weight:950;text-align:center;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;margin-top:-8px;background:linear-gradient(90deg,#ff1a1a,#ff6b00,#ffff00,#00e5ff,#8b5cf6,#ff1a1a);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbow 3s linear infinite}.voucher-popup-confirm{width:180px;height:46px;border:none;border-radius:50px;font-weight:950;font-size:15px;cursor:pointer;margin:10px auto 0 auto;display:block;transition:transform 0.1s cubic-bezier(0,0,0.2,1),filter 0.1s ease;box-shadow:0 5px 15px rgba(40,167,69,0.2)}.voucher-popup-confirm:active{transform:scale(0.88);filter:brightness(0.8)}.instruction-box{margin-top:14px;margin-bottom:4px}.instruction-title-wrap{display:flex;align-items:center;gap:10px;margin-bottom:14px}.instruction-title-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.25),transparent)}.instruction-title{font-size:14px;font-weight:950;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:30px;white-space:nowrap;background:linear-gradient(90deg,#ff1a1a,#ff6b00,#ffff00,#00e5ff,#8b5cf6,#ff1a1a);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbow 3s linear infinite;border:1px solid rgba(255,255,255,0.1)}@keyframes wave{0%,60%,100%{transform:rotate(0deg)}10%,30%,50%{transform:rotate(25deg)}20%,40%{transform:rotate(-10deg)}}.wave-emoji{display:inline-block;transform-origin:70% 70%;animation:wave 2.5s ease-in-out 1;}@keyframes rainbowFooter{to{background-position:200% center}}@keyframes rainbow{to{background-position:200% center}}.rule-card{border-radius:14px;padding:13px 15px;margin-bottom:10px;display:flex;gap:12px;align-items:center;cursor:pointer;box-sizing:border-box;transition:transform 0.1s cubic-bezier(0,0,0.2,1),filter 0.1s ease;border:2.5px solid;outline:1.5px solid rgba(255,255,255,0.15);outline-offset:3px}.rule-card:last-child{margin-bottom:0}.rule-card:active{transform:scale(0.88) !important;filter:brightness(0.8)}.rule-card:nth-child(2){background:linear-gradient(135deg,#d90049,#d9006c);border-color:#ff6b9d}.rule-card:nth-child(3){background:linear-gradient(135deg,#5500d9,#7633d9);border-color:#aa66ff}.rule-card:nth-child(4){background:linear-gradient(135deg,#00a8d9,#0061d9);border-color:#00e5ff}.rule-icon-wrap{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;background:rgba(0,0,0,0.15) !important}.rule-body{display:flex;flex-direction:column}.rule-desc{font-size:12px;font-weight:800;line-height:1.5;color:#ffffff !important}.rule-desc b{font-weight:950;color:var(--yellow) !important}.custom-skynet-bubble{position:fixed;bottom:calc(85px + env(safe-area-inset-bottom, 0px));right:25px;width:60px;height:60px;background:#28a745;border-radius:50%;box-shadow:none;display:flex;align-items:center;justify-content:center;z-index:999999;text-decoration:none;transition:transform 0.2s,background-color 0.3s;animation:bubblePulse 2s infinite alternate}.custom-skynet-bubble:active{transform:scale(0.9)}.custom-skynet-bubble svg{width:28px;height:28px;fill:#ffffff}.tg-unread-badge{position:absolute;top:-2px;right:-2px;width:20px;height:20px;background:#ff3b30;color:#fff;border-radius:50%;border:2px solid #0d0d0d;font-size:10px;font-weight:800;display:none;align-items:center;justify-content:center;box-shadow:0 2px 5px rgba(0,0,0,0.35);animation:badgePop 0.25s ease-out;line-height:1;box-sizing:border-box;}@keyframes badgePop{from{transform:scale(0.4);opacity:0}to{transform:scale(1);opacity:1}}@keyframes bubblePulse{0%{transform:translateY(0);box-shadow:none}100%{transform:translateY(0);box-shadow:none}}@keyframes rainbow_shift{to{background-position:200% center}}@keyframes anime_glow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}@keyframes prism_shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.tg-overlay{--tg-overlay-bg:#fff;--tg-intro-bg:#eef2f3;--tg-card-bg:#fff;--tg-card-shadow:0 2px 14px rgba(0,0,0,0.08);--tg-card-border:none;--tg-title-color:#111b21;--tg-sub-color:#667781;--tg-input-bg:#f7f8fa;--tg-input-border:1.5px solid #b7bec4;--tg-input-color:#111b21;--tg-input-placeholder:#8696a0;--tg-input-focus-bg:#fff;--tg-chat-bg:#eef2f3;--tg-daypill-bg:rgba(0,0,0,0.06);--tg-daypill-color:#667781;--tg-daypill-shadow:none;--tg-bubble-admin-bg:#fff;--tg-bubble-admin-color:#111b21;--tg-composer-bg:#fff;--tg-composer-border:1px solid #e5e5e5;--tg-chip-bg:#f0f2f5;--tg-chip-x-border:#fff;--tg-attach-bg:#f0f2f5;--tg-attach-icon:#667781;--tg-textarea-bg:#f0f2f5;--tg-textarea-color:#111b21;--tg-textarea-placeholder:#8696a0;--tg-textarea-border:1px solid #c9ced3;--tg-send-disabled:#cfd6da;position:fixed;top:0;left:0;width:100%;height:100%;height:100dvh;background:var(--tg-overlay-bg);display:none;flex-direction:column;z-index:99999;overflow:hidden;transition:background 0.2s;}
+.tg-overlay.tg-dark{--tg-overlay-bg:#0d0d0d;--tg-intro-bg:#0d0d0d;--tg-card-bg:#1a1a1a;--tg-card-shadow:0 2px 14px rgba(0,0,0,0.5);--tg-card-border:1px solid rgba(255,255,255,0.08);--tg-title-color:#ffffff;--tg-sub-color:rgba(255,255,255,0.55);--tg-input-bg:#000;--tg-input-border:1.5px solid rgba(255,255,255,0.3);--tg-input-color:#ffffff;--tg-input-placeholder:rgba(255,255,255,0.4);--tg-input-focus-bg:#111;--tg-chat-bg:#0d0d0d;--tg-daypill-bg:rgba(255,255,255,0.08);--tg-daypill-color:rgba(255,255,255,0.55);--tg-daypill-shadow:none;--tg-bubble-admin-bg:#1e1e1e;--tg-bubble-admin-color:#ffffff;--tg-composer-bg:#0d0d0d;--tg-composer-border:1px solid rgba(255,255,255,0.1);--tg-chip-bg:#1e1e1e;--tg-chip-x-border:#0d0d0d;--tg-attach-bg:#1e1e1e;--tg-attach-icon:#ffffff;--tg-textarea-bg:#1e1e1e;--tg-textarea-color:#ffffff;--tg-textarea-placeholder:rgba(255,255,255,0.4);--tg-textarea-border:1px solid rgba(255,255,255,0.25);--tg-send-disabled:#333;}
+.tg-overlay.active{display:flex;}
+.tg-top-bar{background:linear-gradient(135deg,#0b969f,#0a7d85);padding:18px 20px 22px 20px;display:flex;align-items:center;gap:10px;z-index:10;border-radius:0 0 18px 18px;flex-shrink:0;}
+.tg-avatar{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;}
+.tg-avatar svg{width:24px;height:24px;}
+.tg-online-dot{position:absolute;bottom:0px;right:0px;width:11px;height:11px;background:#3fd66b;border:2px solid #0a7d85;border-radius:50%;}
+.tg-back-btn{background:rgba(255,255,255,0.22);border:none;width:36px;height:36px;border-radius:50%;color:#fff;font-size:28px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,0.25);}
+.tg-back-spacer{width:32px;flex-shrink:0;}
+.tg-top-title-wrap{flex:1;text-align:center;}
+.tg-top-title{color:#fff;font-size:16px;font-weight:700;}
+.tg-top-sub{color:rgba(255,255,255,0.8);font-size:13px;font-weight:500;margin-top:2px;display:flex;align-items:center;justify-content:center;gap:5px;}
+.tg-intro-panel{flex:1;display:none;align-items:center;justify-content:center;padding:24px;background:var(--tg-intro-bg);overflow-y:auto;transition:background 0.2s;}
+.tg-intro-card{background:var(--tg-card-bg);border-radius:18px;padding:30px 24px 26px 24px;max-width:340px;width:100%;box-shadow:var(--tg-card-shadow);border:var(--tg-card-border);text-align:center;box-sizing:border-box;transition:background 0.2s;}
+.tg-intro-icon{font-size:36px;margin-bottom:8px;}
+.tg-intro-title{font-size:18px;font-weight:800;color:var(--tg-title-color);margin-bottom:5px;}
+.tg-intro-sub{font-size:14px;color:var(--tg-sub-color);margin-bottom:20px;}
+.tg-field-wrap{margin-bottom:12px;text-align:left;}
+.tg-input{width:100%;height:48px;background:var(--tg-input-bg);border:var(--tg-input-border);border-radius:10px;padding:0 14px;font-size:15.5px;color:var(--tg-input-color);outline:none;transition:border-color 0.15s,background 0.15s;box-sizing:border-box;}
+.tg-input::placeholder{color:var(--tg-input-placeholder);}
+.tg-input:focus{border-color:#0b969f;background:var(--tg-input-focus-bg);}
+.tg-intro-btn{width:100%;height:48px;background:#0b969f;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;margin-top:8px;transition:filter 0.1s;}
+.tg-intro-btn:active{filter:brightness(0.92);}
+.tg-chat-body{display:none;flex:1;overflow-y:auto;background:var(--tg-chat-bg);padding:14px 14px 8px 14px;box-sizing:border-box;flex-direction:column;transition:background 0.2s;}
+.tg-chat-log{max-width:480px;width:100%;margin:auto auto 0 auto;}
+.tg-day-pill{text-align:center;margin:2px 0 16px 0;}
+.tg-day-pill span{background:var(--tg-daypill-bg);color:var(--tg-daypill-color);font-size:12px;font-weight:700;padding:4px 13px;border-radius:20px;box-shadow:var(--tg-daypill-shadow);}
+.tg-bubble-row{display:flex;margin-bottom:10px;}
+.tg-bubble-row.user{justify-content:flex-end;}
+.tg-bubble-row.admin{justify-content:flex-start;}
+.tg-bubble{max-width:78%;padding:8px 11px 9px 13px;border-radius:14px;font-size:15.5px;line-height:1.45;box-shadow:0 1px 2px rgba(0,0,0,0.08);word-break:break-word;}
+.tg-bubble::after{content:"";display:table;clear:both;}
+.tg-bubble-row.user .tg-bubble{background:#0b969f;color:#fff;border-bottom-right-radius:4px;}
+.tg-bubble-row.admin .tg-bubble{background:var(--tg-bubble-admin-bg);color:var(--tg-bubble-admin-color);border-bottom-left-radius:4px;}
+.tg-bubble-text{white-space:pre-wrap;font-size:16.5px;}
+.tg-bubble-time{float:right;font-size:11px;opacity:0.65;margin:4px 0 -2px 8px;white-space:nowrap;}
+.tg-bubble-row.user .tg-bubble-time{color:rgba(255,255,255,0.8);}
+.tg-composer{display:none;flex-shrink:0;background:var(--tg-composer-bg);border-top:var(--tg-composer-border);padding:10px 12px calc(10px + env(safe-area-inset-bottom)) 12px;box-sizing:border-box;transition:background 0.2s;}
+.tg-composer-inner{max-width:480px;width:100%;margin:0 auto;}
+.tg-emoji-panel{display:none;grid-template-columns:repeat(8,1fr);gap:2px;background:var(--tg-chip-bg);border-radius:12px;padding:8px;margin:0 0 8px 0;max-height:150px;overflow-y:auto;}
+.tg-emoji-panel.open{display:grid;}
+.tg-emoji-item{background:transparent;border:none;font-size:22px;line-height:1;padding:6px 0;cursor:pointer;border-radius:8px;}
+.tg-emoji-item:active{background:rgba(127,127,127,0.25);}
+.tg-composer-row{display:flex;align-items:center;gap:8px;}
+.tg-textarea-wrap{flex:1 1 auto;min-width:0;position:relative;display:flex;align-items:flex-end;}
+.tg-attach-btn{width:40px;height:40px;border-radius:50%;background:transparent;border:none;display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;padding:0;position:absolute;right:4px;bottom:5px;z-index:2;}
+.tg-attach-btn:active{filter:brightness(0.8);transform:scale(0.9);}
+.tg-attach-btn svg{stroke:var(--tg-attach-icon);width:26px;height:26px;}
+.tg-textarea{flex:1;width:100%;height:50px;min-height:50px;max-height:120px;background:var(--tg-textarea-bg);border:var(--tg-textarea-border);border-radius:25px;padding:14px 54px 14px 18px;font-size:15.5px;color:var(--tg-textarea-color);outline:none;resize:none;font-family:inherit;transition:height 0.15s,border-color 0.15s;box-sizing:border-box;line-height:1.4;overflow:hidden;scrollbar-width:none;-ms-overflow-style:none;}
+.tg-textarea::-webkit-scrollbar{display:none;width:0;height:0;}
+.tg-textarea::-webkit-resizer{display:none;}
+.tg-textarea:focus{border-color:#0b969f;}
+.tg-textarea::placeholder{color:var(--tg-textarea-placeholder);}
+.tg-send-round{width:50px;height:50px;border-radius:50%;background:#0b969f;border:none;display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:filter 0.1s,transform 0.1s;padding:0;box-shadow:0 2px 6px rgba(0,0,0,0.2);}
+.tg-send-round:active{transform:scale(0.9);filter:brightness(0.92);}
+.tg-send-round:disabled{background:var(--tg-send-disabled);cursor:not-allowed;}
+.tg-status{text-align:center;font-size:13.5px;font-weight:700;margin-top:8px;min-height:0;}
+.tg-status.success{color:#0a7d85;}
+.tg-status.error{color:#d32f2f;}
+
+#submitBtn.btn-disabled{background:linear-gradient(90deg,rgba(60,30,100,0.6),rgba(0,80,100,0.6),rgba(100,30,100,0.6)) !important;color:rgba(255,255,255,0.35) !important;box-shadow:none !important;animation:none !important;cursor:not-allowed !important;}#submitBtn:not(.btn-disabled){background:linear-gradient(90deg,#8b5cf6,#00bcd4,#d946ef,#8b5cf6) !important;background-size:200% auto !important;animation:rainbow_shift 3s linear infinite !important;color:#fff !important;box-shadow:0 0 20px rgba(139,92,246,0.55),0 5px 15px rgba(0,0,0,0.3) !important;}</style>
+</head>
+<body>
+<div class="modal-overlay" id="pkgModal">
+<div class="modal-card">
+<h3>প্যাকেজ বিস্তারিত</h3>
+<p id="pkgDetail" style="text-align:center; font-size:18px; font-weight: 700; color:#fff;"></p>
+<button class="modal-close" onclick="closeModal('pkgModal')">ঠিক আছে</button>
+</div>
+</div>
+<div class="modal-overlay" id="trialConfirmModal">
+<div class="modal-card" style="position:relative;">
+<button onclick="closeModal('trialConfirmModal')" aria-label="ফিরে যান" style="position:absolute; top:6px; left:6px; width:36px; height:36px; border-radius:50%; background:linear-gradient(145deg, #7dd3fc, #0284c7); border:1px solid rgba(255,255,255,0.4); color:#ffffff; cursor:pointer; display:flex; align-items:center; justify-content:center; line-height:1; padding:0; box-shadow:0 4px 10px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.7), inset 0 -2px 3px rgba(0,0,0,0.35); transition:transform 0.1s cubic-bezier(0,0,0.2,1);" onmousedown="this.style.transform='scale(0.9)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.5), inset 0 1px 3px rgba(0,0,0,0.4)';" onmouseup="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.7), inset 0 -2px 3px rgba(0,0,0,0.35)';"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+<h3>🎁 ফ্রি ট্রায়াল</h3>
+<p style="text-align:center; font-size:15px; font-weight:700; color:#fff; line-height:1.6; margin-bottom:4px;">৫০ মেগাবাইট ৩০ মিনিট — একবারের জন্য চালু করতে আগ্রহী?</p>
+<button onclick="confirmTrialYes()" style="width:auto; min-width:140px; height:42px; padding:0 30px; background:var(--success); color:#fff; border:none; border-radius:50px; font-weight:950; font-size:15px; cursor:pointer; margin:16px auto 0 auto; display:block;">হ্যাঁ, চালু করুন</button>
+</div>
+</div>
+</div>
+<div id="voucherPopup" class="voucher-popup-overlay" onclick="if(event.target===this) closeVoucherPopup()">
+<div class="voucher-popup-box">
+<button class="voucher-popup-close" onclick="closeVoucherPopup()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+<div class="voucher-popup-title">📩 SMS-এ প্রাপ্ত কোডটি লিখুন</div>
+<div style="position: relative; margin-bottom: 4px;">
+<input id="popupVoucherInput" type="text" class="v-input"
+placeholder="ভাউচার কোড লিখুন"
+autocomplete="off" maxlength="10" style="margin-bottom:0;"
+oninput="this.value=this.value.replace(/\s+/g,''); onPopupInput(this.value);" />
+<div id="popupVoucherCheck" style="
+display:none; position:absolute; top:50%; right:12px;
+transform:translateY(-50%);
+width:28px; height:28px; border-radius:50%; background:#28a745;
+align-items:center; justify-content:center;
+font-size:13px; font-weight:900; color:#fff;
+box-shadow:0 0 6px rgba(40,167,69,0.5); line-height:1; text-align:center;">✓</div>
+</div>
+<button id="popupConfirmBtn" class="voucher-popup-confirm btn-disabled"
+style="background:#111; color:rgba(255,255,255,0.4); cursor:not-allowed;"
+onclick="confirmVoucherPopup()">কনফার্ম করুন</button>
+</div>
+</div>
+<div class="main-card">
+<div id="logo-wrapper" class="logo-area">
+<div class="logo-container">
+  <div class="logo-main-row">
+    <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg"
+      style="width:62px;height:62px;flex-shrink:0;overflow:visible;filter:drop-shadow(0 0 10px rgba(255,107,0,0.45));">
+      <defs>
+        <linearGradient id="dishGrad2" x1="0" y1="512" x2="300" y2="180" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#8b5cf6"/>
+          <stop offset="55%" stop-color="#ff1a1a"/>
+          <stop offset="100%" stop-color="#ff6b00"/>
+        </linearGradient>
+        <filter id="sdGlow" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="6" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <style>
+          .sd-wave{animation:sdPulse 2s ease-in-out infinite;}
+          .sd-w1{animation-delay:0s;}
+          .sd-w2{animation-delay:0.5s;}
+          @keyframes sdPulse{0%,100%{opacity:0.25}50%{opacity:1}}
+        </style>
+      </defs>
+      <!-- Dish + stand (Font Awesome satellite-dish base shape) -->
+      <path d="M60.6 220.6L164.7 324.7l28.4-28.4c-.7-2.6-1.1-5.4-1.1-8.3c0-17.7 14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32c-2.9 0-5.6-.4-8.3-1.1l-28.4 28.4L291.4 451.4c14.5 14.5 11.8 38.8-7.3 46.3C260.5 506.9 234.9 512 208 512C93.1 512 0 418.9 0 304c0-26.9 5.1-52.5 14.4-76.1c7.5-19 31.8-21.8 46.3-7.3z" fill="url(#dishGrad2)"/>
+      <!-- Inner signal wave -->
+      <path d="M224 96c106 0 192 86 192 192c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-70.7-57.3-128-128-128c-17.7 0-32-14.3-32-32s14.3-32 32-32z" fill="#ffff00" filter="url(#sdGlow)" class="sd-wave sd-w1"/>
+      <!-- Outer signal wave -->
+      <path d="M192 32c0-17.7 14.3-32 32-32C383.1 0 512 128.9 512 288c0 17.7-14.3 32-32 32s-32-14.3-32-32C448 164.3 347.7 64 224 64c-17.7 0-32-14.3-32-32z" fill="#00e5ff" filter="url(#sdGlow)" class="sd-wave sd-w2"/>
+    </svg>
+    <div class="logo-text-col">
+      <h1 class="brand-name">SKY NET</h1>
+      <span class="by-rabbi-alam">Powered by Rabbi Alam</span>
+    </div>
+  </div>
+  <div class="logo-tagline">প্রিমিয়াম ওয়াইফাই সার্ভিস,কেশিয়ারকান্দা</div>
+  <div class="logo-divider"></div>
+</div>
+</div>
+<div id="critical-error-page" class="critical-error-page">
+<p id="critical-error-msg" class="critical-msg"></p>
+</div>
+<div id="mac-error">
+<div class="mac-scan">
+<div class="mac-ring r1"></div>
+<div class="mac-ring r2"></div>
+<div class="mac-ring r3"></div>
+<div class="mac-icon-badge">⚠️</div>
+</div>
+<h1 class="mac-title-ohno">Randomised MAC Detected</h1>
+<p class="mac-desc">আপনার ডিভাইসে প্রতিবার ভিন্ন ভিন্ন (র‍্যান্ডম) MAC অ্যাড্রেস ব্যবহৃত হচ্ছে, তাই স্কাই নেট আপনাকে শনাক্ত করতে পারছে না।</p>
+<div class="instruction-title-wrap" style="margin-top:18px;margin-bottom:12px">
+<div class="instruction-title-line"></div>
+<div class="instruction-title">সমাধানের উপায়</div>
+<div class="instruction-title-line"></div>
+</div>
+<div class="mac-steps" id="mac-steps-android">
+<div class="mac-step-item"><span class="mac-step-num">১</span><span class="mac-step-text">ফোনের <b>WiFi Settings</b>-এ যান।</span></div>
+<div class="mac-step-item"><span class="mac-step-num">২</span><span class="mac-step-text"><b>SKY NET</b> নেটওয়ার্কের নামের পাশে গিয়ার/সেটিংস আইকনে ক্লিক করুন।</span></div>
+<div class="mac-step-item"><span class="mac-step-num">৩</span><span class="mac-step-text"><b>Privacy</b> বা <b>MAC address type</b> অপশনে <b>Use device MAC</b> সিলেক্ট করে সেভ করুন।</span></div>
+<div class="mac-step-item"><span class="mac-step-num">৪</span><span class="mac-step-text">সর্বশেষ মূল লগইন পেজে আপনার সংগৃহীত ভাউচার দিয়ে সাইন ইন করুন।</span></div>
+</div>
+</div>
+<div id="content-wrapper">
+<div id="welcomeBanner" style="text-align:center;padding:0;opacity:0;margin-top:0;transition:opacity 1.2s ease, margin-top 1.5s cubic-bezier(0.4,0,0.2,1);">
+<span id="waveEmoji" class="wave-emoji" style="font-size:20px;display:none;">👋</span> <span id="welcomeText" style="font-size:18px;font-weight:900;background:linear-gradient(90deg,#ff1a1a,#ff6b00,#ffff00,#00e5ff,#8b5cf6,#ff1a1a);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:rainbow 3s linear infinite;"></span>
+</div>
+<div class="top-row" id="top-row">
+<div class="top-col" style="flex:1.1;">
+<div class="pay-card" onclick="copyNum()">
+<span class="pay-text">প্যাকেজ মূল্য<br> সেন্ড মানি করুন</span>
+<span class="pay-num">01410-867580</span>
+<div style="background: #fff; color: #ff1a1a; font-size: 10px; padding: 4px 14px; border-radius: 20px; font-weight: 900; width: fit-content; margin: 0 auto;" id="btnText">কপি করুন</div>
+</div>
+</div>
+<div class="top-col" style="flex:1.3;">
+<div class="mini-pkgs">
+<div class="mini-item p1" onclick="openPkg('৳৫০ এর প্যাকেজে পাবেন ১৫ জিবি ইন্টারনেট। মেয়াদ ৭ দিন।')" style="position:relative;"><span class="p-price">৳৫০</span><span class="p-limit"> ১৫ জিবি</span><span style="font-size:12px;font-weight:900;color:rgba(255,255,255,0.7);position:absolute;bottom:5px;right:8px;">›</span></div>
+<div class="mini-item p2" onclick="openPkg('৳১০০ এর প্যাকেজে পাবেন ৩০ জিবি ইন্টারনেট। মেয়াদ ১৫ দিন।')" style="position:relative;"><span class="p-price">৳১০০</span><span class="p-limit"> ৩০ জিবি</span><span style="font-size:12px;font-weight:900;color:rgba(255,255,255,0.7);position:absolute;bottom:5px;right:8px;">›</span></div>
+<div class="mini-item p3" onclick="openPkg('৳১৫০ এর প্যাকেজে পাবেন ৪৫ জিবি ইন্টারনেট। মেয়াদ ২০ দিন।')" style="position:relative;"><span class="p-price">৳১৫০</span><span class="p-limit"> ৪৫ জিবি</span><span style="font-size:12px;font-weight:900;color:rgba(255,255,255,0.7);position:absolute;bottom:5px;right:8px;">›</span></div>
+<div class="mini-item p4" onclick="openPkg('৳২০০ এর প্যাকেজে পাবেন ৮০ জিবি ইন্টারনেট। মেয়াদ ৩০ দিন।')" style="position:relative;"><span class="p-price">৳২০০</span><span class="p-limit"> ৮০ জিবি</span><span style="font-size:12px;font-weight:900;color:rgba(255,255,255,0.7);position:absolute;bottom:5px;right:8px;">›</span></div>
+</div>
+</div>
+</div>
+<div class="special-offer-card" onclick="openPkg('৳২৫০ এর প্যাকেজে পাবেন সীমাহীন ইন্টারনেট। মেয়াদ ৩০ দিন।')" >
+<div class="offer-badge">Special Offer</div>
+<div style="display: flex; align-items: center; justify-content: center;">
+<span class="old-price">৳৩৫০</span>
+<span class="new-price-small">৳২৫০</span>
+<span style="font-weight: 700; font-size: 18px; margin-left: 5px;">/ ৩০ দিন</span>
+</div>
+<span style="font-size:12px; font-weight:700; display:block; margin-top: 5px;">✨ সারা মাসের আনলিমিটেড ইন্টারনেট প্যাকেজ</span>
+<span style="font-size:12px;font-weight:900;color:rgba(255,255,255,0.7);position:absolute;bottom:8px;right:12px;">›</span>
+</div>
+<div style="
+  margin-top: 20px;
+  border-radius: 24px;
+  padding: 3px;
+  background: linear-gradient(135deg, #ff1a1a 0%, #ff6b00 25%, #ffff00 45%, #00e5ff 65%, #0066ff 85%, #ff1a1a 100%);
+  box-shadow: 0 0 20px rgba(255,80,0,0.5), 0 0 40px rgba(0,229,255,0.3), 0 8px 32px rgba(0,0,0,0.7);
+  position: relative;
+"><div style="
+  background: linear-gradient(135deg, #1a0500 0%, #0d0d00 40%, #00050d 70%, #000d1a 100%);
+  border-radius: 22px;
+  padding: 20px 16px 22px 16px;
+  position: relative;
+  overflow: hidden;
+">
+<div style="position:absolute;top:-30px;left:-30px;width:120px;height:120px;background:radial-gradient(circle,rgba(139,92,246,0.35) 0%,transparent 70%);border-radius:50%;pointer-events:none;animation:orb1 4s ease-in-out infinite alternate;"></div>
+<div style="position:absolute;bottom:-20px;right:-20px;width:100px;height:100px;background:radial-gradient(circle,rgba(0,229,255,0.3) 0%,transparent 70%);border-radius:50%;pointer-events:none;animation:orb2 5s ease-in-out infinite alternate;"></div>
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:150px;height:60px;background:radial-gradient(ellipse,rgba(217,70,239,0.15) 0%,transparent 70%);pointer-events:none;"></div>
+<div style="text-align:center; margin-bottom:14px;">
+  <span style="font-size:11px; font-weight:800; letter-spacing:3px; text-transform:uppercase; background:linear-gradient(90deg,#8b5cf6,#00e5ff,#d946ef,#8b5cf6); background-size:200% auto; -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:rainbow 3s linear infinite;">🔐 ভাউচার দিয়ে প্রবেশ করুন</span>
+</div>
+<form id="loginForm" action="/cgi-bin/hotspot_login.cgi" method="post" onSubmit="return startTimer(event)">
+<div style="position: relative; max-width: 400px; margin: 0 auto;">
+<div id="timerOverlay" class="timer-overlay"></div>
+<input id="user" name="ga_user" type="text" class="v-input" placeholder="ভাউচার কোড লিখুন" required autocomplete="off" maxlength="10" onfocus="this.blur()" readonly inputmode="none" style="cursor:pointer; height:54px; line-height:54px;" oninput="this.value=this.value.replace(/\s+/g,''); syncVoucher(this.value);" />
+<div id="voucher-check" onclick="saveVoucher()">✓</div>
+</div>
+<input id="pass" name="ga_pass" type="hidden" />
+<button type="submit" id="submitBtn" class="submit-btn btn-disabled" style="
+  background: linear-gradient(90deg,#8b5cf6,#00bcd4,#d946ef) !important;
+  background-size: 200% auto !important;
+  animation: rainbow_shift 3s linear infinite;
+  box-shadow: 0 0 18px rgba(139,92,246,0.45), 0 5px 15px rgba(0,0,0,0.3);
+  letter-spacing:1px;
+  font-size:16px;
+  width:200px;
+  height:50px;
+">🚀 সাইন ইন</button>
+</form>
+</div></div>
+<div class="instruction-box">
+<div class="instruction-title-wrap">
+<div class="instruction-title-line"></div>
+<div class="instruction-title">ব্যবহার নির্দেশিকা :</div>
+<div class="instruction-title-line"></div>
+</div>
+<div class="rule-card">
+<div class="rule-icon-wrap">💳</div>
+<div class="rule-body">
+<span class="rule-desc">ভাউচার কিনতে নির্ধারিত প্যাকেজ মূল্য বিকাশ/নগদে সেন্ড মানি করুন, অতি শীঘ্রই একটি গোপন <b>ভাউচার কোড</b> SMS-এর মাধ্যমে আপনার ফোনে চলে যাবে ।</span>
+</div>
+</div>
+<div class="rule-card">
+<div class="rule-icon-wrap">🔑</div>
+<div class="rule-body">
+<span class="rule-desc">SMS- এ  প্রাপ্ত কোডটি হুবহু ভাউচার বক্সে বসিয়ে সাইন-ইন করুন। মনে রাখবেন, একটি কোড দিয়ে সর্বোচ্চ <b>১টি ডিভাইসে</b> ইন্টারনেট ব্যবহার করা যাবে।</span>
+</div>
+</div>
+<div class="rule-card">
+<div class="rule-icon-wrap">💬</div>
+<div class="rule-body">
+<span class="rule-desc">পেমেন্ট বা সংযোগজনিত কোনো সমস্যায় পড়লে নির্দ্বিধায় আমাদের সাথে <b>যোগাযোগ করুন</b>, আমরা যথাসম্ভব দ্রুত আপনার সমস্যার সমাধান করবো।</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer style="
+width: 100%; max-width: 550px; background: #0a0a0a;
+border-top: 1px solid rgba(255,255,255,0.12);
+padding: 12px 20px; text-align: center;
+box-sizing: border-box;
+">
+<p style="margin:0; font-size: 12px; color: rgba(255,255,255,0.6); letter-spacing: 0.5px;">
+<span style="color: #ffffff; font-weight: 700;">SKY NET</span> — সর্বস্বত্ব সংরক্ষিত
+</p>
+<p style="margin: 5px 0 0 0; font-size: 12px;">
+<a href="javascript:void(0)" id="freeTrialLink" onclick="submitTrial()" style="
+font-weight: 800;
+background: linear-gradient(90deg, #ff1a1a, #ff6b00, #ffff00, #00e5ff, #8b5cf6, #ff1a1a);
+background-size: 200% auto;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+animation: rainbowFooter 3s linear infinite;
+text-decoration: none;
+cursor: pointer;
+">🎁 Free Trial</a>
+<form name="trialForm" id="trialForm" action="/cgi-bin/hotspot_login.cgi" method="post" style="display:none;">
+<input type="hidden" name="ga_user" id="trialUser" value="" />
+<input type="hidden" name="ga_pass" value="" />
+</form>
+</p>
+</footer>
+<script>
+var _storage = {
+get: function(k) {
+try {
+var name = k + "=";
+var ca = document.cookie.split(';');
+for (var i = 0; i < ca.length; i++) {
+var c = ca[i].trim();
+if (c.indexOf(name) === 0) return c.substring(name.length);
+}
+return null;
+} catch(e) { return null; }
+},
+set: function(k, v) {
+try {
+var d = new Date();
+d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+document.cookie = k + "=" + v + ";expires=" + d.toUTCString() + ";path=/";
+} catch(e) {}
+},
+remove: function(k) {
+try {
+document.cookie = k + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/";
+} catch(e) {}
+}
+};
+window.isRandomMac = false;
+function closeModal(id) { document.getElementById(id).style.display = 'none'; var bubble = document.querySelector('.custom-skynet-bubble'); if (bubble) bubble.style.display = ''; }
+function openPkg(msg) { document.getElementById('pkgDetail').innerHTML = msg; document.getElementById('pkgModal').style.display = 'flex'; var bubble = document.querySelector('.custom-skynet-bubble'); if (bubble) bubble.style.display = 'none'; }
+function openVoucherPopup() {
+var popup = document.getElementById('voucherPopup');
+var inp = document.getElementById('popupVoucherInput');
+var confirmBtn = document.getElementById('popupConfirmBtn');
+var check = document.getElementById('popupVoucherCheck');
+var bubble = document.querySelector('.custom-skynet-bubble');
+var currentVal = document.getElementById('user').value;
+inp.value = currentVal;
+if (currentVal.length >= 5) {
+check.style.display = 'flex';
+confirmBtn.classList.remove('btn-disabled');
+confirmBtn.style.background = 'var(--success)';
+confirmBtn.style.color = '#fff';
+confirmBtn.style.cursor = 'pointer';
+} else {
+check.style.display = 'none';
+confirmBtn.classList.add('btn-disabled');
+confirmBtn.style.background = '#111';
+confirmBtn.style.color = 'rgba(255,255,255,0.4)';
+confirmBtn.style.cursor = 'not-allowed';
+}
+popup.classList.add('active');
+if (bubble) bubble.style.zIndex = '1';
+
+// বিলম্ব দূর করে সরাসরি ফোকাস করা হলো যাতে ব্রাউজার প্রথম ক্লিকেই কিবোর্ড আনে
+inp.focus();
+}
+function closeVoucherPopup() {
+var bubble = document.querySelector('.custom-skynet-bubble');
+document.getElementById('voucherPopup').classList.remove('active');
+if (bubble) bubble.style.zIndex = '999999';
+}
+function onPopupInput(val) {
+var check = document.getElementById('popupVoucherCheck');
+var confirmBtn = document.getElementById('popupConfirmBtn');
+if (val.length >= 5) {
+check.style.display = 'flex';
+confirmBtn.classList.remove('btn-disabled');
+confirmBtn.style.background = 'var(--success)';
+confirmBtn.style.color = '#fff';
+confirmBtn.style.cursor = 'pointer';
+} else {
+check.style.display = 'none';
+confirmBtn.classList.add('btn-disabled');
+confirmBtn.style.background = '#111';
+confirmBtn.style.color = 'rgba(255,255,255,0.4)';
+confirmBtn.style.cursor = 'not-allowed';
+}
+}
+function confirmVoucherPopup() {
+var confirmBtn = document.getElementById('popupConfirmBtn');
+if (confirmBtn.classList.contains('btn-disabled')) return;
+var code = document.getElementById('popupVoucherInput').value.trim();
+if (code.length < 5) return;
+var mainInput = document.getElementById('user');
+mainInput.value = code;
+document.getElementById('popupVoucherInput').blur();
+closeVoucherPopup();
+syncVoucher(code);
+var vCheck = document.getElementById('voucher-check');
+vCheck.style.display = 'flex';
+vCheck.classList.remove('locked');
+vCheck.innerHTML = '✓';
+setTimeout(function() {
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+window.scrollTo({top: 0, behavior: 'smooth'});
+}, 50);
+}
+function syncVoucher(val) {
+var clean = val.replace(/\s+/g, '');
+var vCheck = document.getElementById('voucher-check');
+if (clean.length >= 5) {
+vCheck.style.display = 'flex';
+if (!vCheck.classList.contains('locked')) { vCheck.innerHTML = '✓'; }
+} else {
+vCheck.style.display = 'none';
+vCheck.classList.remove('locked');
+vCheck.innerHTML = '✓';
+}
+checkVoucher(clean);
+}
+function saveVoucher() {
+var vCheck = document.getElementById('voucher-check');
+var userInp = document.getElementById('user');
+if (!vCheck || !userInp) return;
+var code = userInp.value.trim();
+if (code.length < 5) return;
+if (vCheck.classList.contains('locked')) {
+openVoucherPopup();
+return;
+}
+_storage.set('skynet_last_voucher', code);
+vCheck.classList.add('locked');
+vCheck.innerHTML = '🔒';
+}
+function checkVoucher(val) {
+var btn = document.getElementById('submitBtn');
+if (val.length >= 5) {
+btn.classList.remove('btn-disabled');
+btn.disabled = false;
+} else {
+btn.classList.add('btn-disabled');
+btn.disabled = true;
+}
+}
+function startTimer(event) {
+if (window.isRandomMac) { event.preventDefault(); return false; }
+var submitBtn = document.getElementById('submitBtn');
+if (submitBtn.classList.contains('btn-disabled')) { event.preventDefault(); return false; }
+event.preventDefault();
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+window.scrollTo({top: 0, behavior: 'smooth'});
+var userInput = document.getElementById('user');
+var passInput = document.getElementById('pass');
+var overlay = document.getElementById('timerOverlay');
+var code = userInput.value.trim();
+passInput.value = code;
+submitBtn.classList.add('btn-disabled');
+submitBtn.disabled = true;
+overlay.style.display = 'flex';
+var vCheck = document.getElementById('voucher-check');
+if (!vCheck.classList.contains('locked')) { _storage.remove('skynet_last_voucher'); }
+let count = 3;
+overlay.innerHTML = 'ভেরিফাই হচ্ছে<span class="verify-dots"><span></span><span></span><span></span></span>';
+var interval = setInterval(function() {
+count--;
+if (count <= 0) { clearInterval(interval); document.getElementById('loginForm').submit(); }
+}, 1000);
+return false;
+}
+function fitBrandName() {
+var row = document.querySelector('.logo-main-row');
+var icon = document.querySelector('.logo-icon-box');
+var brand = document.querySelector('.brand-name');
+if (!row || !icon || !brand) return;
+brand.style.fontSize = '52px';
+brand.style.letterSpacing = '7px';
+var available = row.clientWidth - icon.offsetWidth - 16 - 4;
+var width = brand.scrollWidth;
+if (width > available && available > 0) {
+var scale = available / width;
+var newSize = Math.max(22, Math.floor(52 * scale));
+var newSpacing = Math.max(1, Math.floor(7 * scale));
+brand.style.fontSize = newSize + 'px';
+brand.style.letterSpacing = newSpacing + 'px';
+}
+}
+window.addEventListener('load', fitBrandName);
+window.addEventListener('resize', fitBrandName);
+document.addEventListener('DOMContentLoaded', function() {
+fitBrandName();
+var uInp = document.getElementById('user');
+// টাচ ও ক্লিকের ঝামেলা ও লেটেন্সি এড়াতে সরাসরি স্ট্যান্ডার্ড ইভেন্ট যুক্ত করা হলো
+uInp.addEventListener('click', function(e) {
+  e.preventDefault();
+  openVoucherPopup();
+});
+var vCheck = document.getElementById('voucher-check');
+var savedVoucher = _storage.get('skynet_last_voucher');
+if (savedVoucher && savedVoucher.length >= 5) {
+uInp.value = savedVoucher;
+vCheck.style.display = 'flex';
+vCheck.classList.add('locked');
+vCheck.innerHTML = '🔒';
+checkVoucher(savedVoucher);
+}
+function getQueryParam(name) {
+try {
+var re = new RegExp('[?&]' + name.replace(/[[\]]/g, '\\$&') + '=([^&#]*)');
+var results = re.exec(window.location.search);
+return results ? decodeURIComponent(results[1].replace(/\+/g, ' ')) : "";
+} catch(e) { return ""; }
+}
+window.userMac = getQueryParam('ga_cmac');
+var userMac = window.userMac;
+var isRandomMac = false;
+var _earlyErrorCode = getQueryParam('ga_error_code').toLowerCase().trim();
+var _hasLoginError = !!_earlyErrorCode;
+var banner = document.getElementById('welcomeBanner');
+if (!_hasLoginError) {
+var welcomeText = document.getElementById('welcomeText');
+if (banner && welcomeText) {
+  welcomeText.innerText = 'স্কাইনেটে স্বাগতম';
+  banner.style.marginTop = '0';
+  banner.style.padding = '0px 0 6px 0';
+  banner.style.opacity = '1';
+var waveEmoji = document.getElementById('waveEmoji');
+if (waveEmoji) {
+  waveEmoji.textContent = '👏';
+  waveEmoji.style.display = 'inline-block';
+}
+setTimeout(function(){
+  var h = banner.offsetHeight;
+  banner.style.opacity = '0';
+  banner.style.marginTop = '-' + h + 'px';
+  var logoW = document.getElementById('logo-wrapper');
+  if (logoW) { logoW.style.paddingBottom = '8px'; }
+  var topRow = document.getElementById('top-row');
+  if (topRow) { topRow.style.marginBottom = '10px'; }
+}, 3000);
+}
+} else if (banner) {
+banner.style.display = 'none';
+}
+if (userMac) {
+var secondChar = userMac.charAt(1).toUpperCase();
+if (['2', '6', 'A', 'E'].includes(secondChar)) {
+isRandomMac = true;
+window.isRandomMac = true;
+document.getElementById('logo-wrapper').style.display = 'none';
+document.getElementById('content-wrapper').style.display = 'none';
+document.getElementById('mac-error').style.display = 'block';
+document.body.classList.add('mac-active');
+var _chatBubble = document.querySelector('.custom-skynet-bubble');
+if (_chatBubble) { _chatBubble.style.display = 'none'; }
+var _freeTrialLink = document.getElementById('freeTrialLink');
+if (_freeTrialLink) { _freeTrialLink.style.display = 'none'; }
+}
+}
+var rawErrorCode = _earlyErrorCode;
+if (rawErrorCode) {
+function showFormError(msg) {
+if (navigator.vibrate) { navigator.vibrate([150, 80, 150]); }
+if (uInp) { uInp.value = ""; checkVoucher(''); }
+_storage.remove('skynet_last_voucher');
+if (vCheck) { vCheck.style.display = 'none'; vCheck.classList.remove('locked'); vCheck.innerHTML = '✓'; }
+var timerOv = document.getElementById('timerOverlay');
+if (timerOv) {
+timerOv.style.display = 'flex';
+timerOv.style.borderColor = '#8b0000';
+timerOv.style.color = '#ff5c5c';
+timerOv.style.fontSize = '18px';
+timerOv.style.fontWeight = '950';
+timerOv.classList.remove('err-active');
+void timerOv.offsetWidth;
+timerOv.classList.add('err-active');
+timerOv.innerText = msg;
+var availW = timerOv.clientWidth - 28;
+var curSize = 18;
+while (timerOv.scrollWidth > availW * 2.4 && curSize > 14) {
+curSize -= 0.5;
+timerOv.style.fontSize = curSize + 'px';
+}
+setTimeout(function() {
+timerOv.style.display = 'none';
+timerOv.style.borderColor = 'var(--yellow)';
+timerOv.style.color = 'var(--yellow)';
+timerOv.style.background = '#000';
+timerOv.style.fontSize = '16px';
+timerOv.classList.remove('err-active');
+}, 5000);
+}
+}
+function showCriticalError(msg) {
+var logoW = document.getElementById('logo-wrapper');
+var contentW = document.getElementById('content-wrapper');
+if (logoW) logoW.style.display = 'none';
+if (contentW) contentW.style.display = 'none';
+var cp = document.getElementById('critical-error-page');
+var cm = document.getElementById('critical-error-msg');
+if (cp && cm) {
+var parts = msg.split('\n');
+var icon = parts[0] || '';
+var title = parts[1] || '';
+var sub = parts.slice(2).join(' ') || '';
+cm.innerHTML = '<div class="critical-icon-badge">' + icon + '</div><div class="critical-title">' + title + '</div><div class="critical-sub">' + sub + '</div>';
+cp.style.display = 'block';
+}
+window.isCriticalErrorActive = true;
+setTimeout(function() {
+if (cp) cp.style.display = 'none';
+if (logoW) logoW.style.display = '';
+if (contentW) contentW.style.display = '';
+window.isCriticalErrorActive = false;
+}, 5000);
+}
+function translateCambiumError(code) {
+// Cambium's cnPilot hotspot cgi only reports 3 error codes: reject, timeout, not-found.
+// It does not distinguish wrong voucher vs expired voucher vs limit-reached — all of
+// these come back as a RADIUS "reject" — so one common message covers them.
+if (code === 'reject') {
+return 'ভাউচার ভুল অথবা লিমিট শেষ! 😫';
+}
+if (code === 'timeout' || code === 'not-found') {
+return 'সার্ভারে সাময়িক সমস্যা হচ্ছে...';
+}
+return 'ভাউচার ভুল অথবা লিমিট শেষ! 😫';
+}
+showFormError(translateCambiumError(rawErrorCode));
+if (window.isCriticalErrorActive) return;
+}
+});
+var BOT_TOKEN = '8291673112:AAEmudf0dM9Nq5QyH8hF5bccWhuZptciO_E';
+var CHAT_ID = '6190197553';
+function scrollToInput(el) {
+setTimeout(function(){ el.scrollIntoView({behavior:'smooth', block:'center'}); }, 300);
+}
+function preventBodyScroll(e) {
+var overlay = document.getElementById('tgOverlay');
+if (!overlay.contains(e.target)) { e.preventDefault(); }
+}
+function openTg(e) {
+if (e) e.preventDefault();
+document.getElementById('tgOverlay').classList.add('active');
+var b = document.querySelector('.custom-skynet-bubble');
+if (b) b.style.display = 'none';
+applyTgTheme();
+enterTgChatOrIntro();
+document.body.addEventListener('touchmove', preventBodyScroll, {passive:false});
+}
+function applyTgTheme() {
+var overlay = document.getElementById('tgOverlay');
+overlay.classList.add('tg-dark');
+}
+function enterTgChatOrIntro() {
+var savedName = localStorage.getItem('tg_name');
+var intro = document.getElementById('tgIntroPanel');
+var chatBody = document.getElementById('tgChatBody');
+var composer = document.getElementById('tgComposer');
+if (!savedName && window._detectedUserName) {
+  savedName = window._detectedUserName;
+  localStorage.setItem('tg_name', savedName);
+}
+if (savedName) {
+  intro.style.display = 'none';
+  chatBody.style.display = 'flex';
+  composer.style.display = 'block';
+  renderChatLog();
+  startTgPolling();
+  clearTgUnread();
+} else {
+  intro.style.display = 'flex';
+  chatBody.style.display = 'none';
+  composer.style.display = 'none';
+}
+}
+function startTgChat() {
+var name = (window._detectedUserName || document.getElementById('tgName').value.trim());
+var st = document.getElementById('tgIntroStatus');
+if (!name) { st.className = 'tg-status error'; st.innerText = '❌ নাম দিন'; return; }
+st.innerText = '';
+localStorage.setItem('tg_name', name);
+document.getElementById('tgIntroPanel').style.display = 'none';
+document.getElementById('tgChatBody').style.display = 'flex';
+document.getElementById('tgComposer').style.display = 'block';
+renderChatLog();
+startTgPolling();
+setTimeout(function(){ document.getElementById('tgMsg').focus(); }, 200);
+}
+function closeTg() {
+document.getElementById('tgOverlay').classList.remove('active');
+closeEmojiPanel();
+var b = document.querySelector('.custom-skynet-bubble');
+if (b) b.style.display = 'flex';
+var btn = document.getElementById('tgSendBtn');
+if (btn) btn.disabled = false;
+var s = document.getElementById('tgStatus'); if (s) { s.className = 'tg-status'; s.innerText = ''; }
+document.body.removeEventListener('touchmove', preventBodyScroll);
+}
+function updateCounter() {
+var ta = document.getElementById('tgMsg');
+ta.style.height = 'auto';
+ta.style.height = Math.min(Math.max(ta.scrollHeight, 50), 120) + 'px';
+}
+var TG_EMOJIS = ['😀','😁','😂','🥰','😊','😍','😘','😉','😎','🤩','😅','🙂','😇','🥳','😴','😢','😭','😡','🤔','😱','👍','👎','🙏','👏','💪','🤝','❤️','💯','🔥','✨','🎉','😐'];
+function toggleEmojiPanel() {
+var panel = document.getElementById('tgEmojiPanel');
+if (panel.classList.contains('open')) { closeEmojiPanel(); return; }
+if (!panel.dataset.filled) {
+panel.innerHTML = TG_EMOJIS.map(function(e){ return '<button type="button" class="tg-emoji-item" onclick="insertEmoji(\''+e+'\')">'+e+'</button>'; }).join('');
+panel.dataset.filled = '1';
+}
+panel.classList.add('open');
+}
+function closeEmojiPanel() {
+document.getElementById('tgEmojiPanel').classList.remove('open');
+}
+function insertEmoji(e) {
+var ta = document.getElementById('tgMsg');
+var start = ta.selectionStart || ta.value.length;
+var end = ta.selectionEnd || ta.value.length;
+ta.value = ta.value.slice(0, start) + e + ta.value.slice(end);
+var pos = start + e.length;
+ta.focus();
+ta.setSelectionRange(pos, pos);
+updateCounter();
+}
+function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function loadThreadIds(){ try{ return JSON.parse(localStorage.getItem('tg_thread_ids')||'[]'); }catch(e){ return []; } }
+function saveThreadIds(ids){ localStorage.setItem('tg_thread_ids', JSON.stringify(ids.slice(-30))); }
+function loadChatHistory(){ try{ return JSON.parse(localStorage.getItem('tg_chat_history')||'[]'); }catch(e){ return []; } }
+function saveChatHistory(h){ localStorage.setItem('tg_chat_history', JSON.stringify(h.slice(-60))); }
+function formatDayLabel(d, today){
+var isSameDay = d.getFullYear()===today.getFullYear() && d.getMonth()===today.getMonth() && d.getDate()===today.getDate();
+if (isSameDay) return 'আজ';
+var y = new Date(today); y.setDate(today.getDate()-1);
+var isYesterday = d.getFullYear()===y.getFullYear() && d.getMonth()===y.getMonth() && d.getDate()===y.getDate();
+if (isYesterday) return 'গতকাল';
+var months=['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
+return d.getDate() + ' ' + months[d.getMonth()] + (d.getFullYear()!==today.getFullYear() ? ', ' + d.getFullYear() : '');
+}
+function renderChatLog() {
+var hist = loadChatHistory();
+var log = document.getElementById('tgChatLog');
+var greetName = localStorage.getItem('tg_name') || window._detectedUserName || '';
+var today = new Date();
+var firstTime = hist.length ? Math.min.apply(null, hist.map(function(m){ return m.time; })) : Date.now();
+var items = [{isGreet:true, time: firstTime - 1}].concat(hist.map(function(m){ return {isGreet:false, m:m, time:m.time}; }));
+items.sort(function(a,b){ return a.time - b.time; });
+var html = '';
+var lastDayKey = null;
+items.forEach(function(it){
+  var t = new Date(it.time);
+  var dayKey = t.getFullYear()+'-'+t.getMonth()+'-'+t.getDate();
+  if (dayKey !== lastDayKey) {
+    html += '<div class="tg-day-pill"><span>' + formatDayLabel(t, today) + '</span></div>';
+    lastDayKey = dayKey;
+  }
+  if (it.isGreet) {
+    html += '<div class="tg-bubble-row admin"><div class="tg-bubble"><span class="tg-bubble-text">👋 স্বাগতম' + (greetName ? ', ' + escapeHtml(greetName) : '') + '! কীভাবে সহায়তা করতে পারি?</span></div></div>';
+  } else {
+    var m = it.m;
+    var cls = m.from === 'admin' ? 'admin' : 'user';
+    var hh = ('0'+t.getHours()).slice(-2), mm = ('0'+t.getMinutes()).slice(-2);
+    html += '<div class="tg-bubble-row '+cls+'"><div class="tg-bubble"><span class="tg-bubble-text">'+escapeHtml(m.text)+'</span><span class="tg-bubble-time">'+hh+':'+mm+'</span></div></div>';
+  }
+});
+log.innerHTML = html;
+var chatBody = document.getElementById('tgChatBody');
+chatBody.scrollTop = chatBody.scrollHeight;
+}
+function loadTgUnread(){ return parseInt(localStorage.getItem('tg_unread')||'0', 10); }
+function clearTgUnread(){
+localStorage.setItem('tg_unread','0');
+var b = document.getElementById('tgUnreadBadge');
+if (b) { b.style.display = 'none'; b.innerText = ''; }
+}
+function vibrateNotify(){
+if (navigator.vibrate) { navigator.vibrate([120, 60, 120]); }
+}
+function addTgUnread(n){
+var c = loadTgUnread() + n;
+localStorage.setItem('tg_unread', String(c));
+var b = document.getElementById('tgUnreadBadge');
+if (b) { b.style.display = 'flex'; b.innerText = c > 9 ? '9+' : String(c); }
+if (n > 0) { vibrateNotify(); }
+}
+var tgPollTimer = null;
+function startTgPolling() {
+pollTgReplies();
+if (tgPollTimer) { clearInterval(tgPollTimer); }
+tgPollTimer = setInterval(pollTgReplies, 5000);
+}
+function stopTgPolling() {
+if (tgPollTimer) { clearInterval(tgPollTimer); tgPollTimer = null; }
+}
+function pollTgReplies() {
+var offset = parseInt(localStorage.getItem('tg_offset') || '0', 10);
+fetch('https://api.telegram.org/bot' + BOT_TOKEN + '/getUpdates?offset=' + offset + '&timeout=0')
+.then(function(r){ return r.json(); })
+.then(function(d){
+  if (!d.ok || !d.result || !d.result.length) return;
+  var ids = loadThreadIds();
+  var hist = loadChatHistory();
+  var changed = false;
+  var newCount = 0;
+  d.result.forEach(function(u){
+    localStorage.setItem('tg_offset', (u.update_id + 1).toString());
+    var m = u.message;
+    if (m && m.reply_to_message && ids.indexOf(m.reply_to_message.message_id) !== -1 && m.text) {
+      hist.push({from:'admin', text: m.text, time: (m.date ? m.date*1000 : Date.now())});
+      changed = true;
+      newCount++;
+    }
+  });
+  if (changed) {
+    saveChatHistory(hist);
+    var overlayActive = document.getElementById('tgOverlay').classList.contains('active');
+    if (overlayActive) { renderChatLog(); vibrateNotify(); }
+    else { addTgUnread(newCount); }
+  }
+})
+.catch(function(){});
+}
+(function initTgBackgroundPoll(){
+document.addEventListener('DOMContentLoaded', function(){
+if (loadTgUnread() > 0) { addTgUnread(0); }
+if (localStorage.getItem('tg_name')) { startTgPolling(); }
+});
+})();
+function sendTg() {
+var name = localStorage.getItem('tg_name') || window._detectedUserName || 'গ্রাহক';
+var msg = document.getElementById('tgMsg').value.trim();
+var s = document.getElementById('tgStatus');
+if (!msg) { s.className = 'tg-status error'; s.innerText = '❌ মেসেজ লিখুন'; return; }
+closeEmojiPanel();
+var btn = document.getElementById('tgSendBtn');
+btn.disabled = true;
+s.className = 'tg-status'; s.innerText = '';
+var text = name + ': ' + msg;
+function onTgDone(d) {
+btn.disabled = false;
+if (d.ok) {
+var mid = d.result && d.result.message_id;
+if (mid) { var ids = loadThreadIds(); ids.push(mid); saveThreadIds(ids); }
+var hist = loadChatHistory();
+hist.push({from:'user', text: msg, time: Date.now()});
+saveChatHistory(hist);
+renderChatLog();
+document.getElementById('tgMsg').value = ''; document.getElementById('tgMsg').style.height = 'auto';
+startTgPolling();
+} else {
+s.className = 'tg-status error'; s.innerText = '❌ ' + (d.description || 'ব্যর্থ হয়েছে, আবার চেষ্টা করুন');
+}
+}
+function onTgFail() {
+btn.disabled = false;
+s.className = 'tg-status error'; s.innerText = '❌ ব্যর্থ হয়েছে, আবার চেষ্টা করুন';
+}
+fetch('https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage', {
+method: 'POST', headers: {'Content-Type':'application/json'},
+body: JSON.stringify({chat_id: CHAT_ID, text: text, parse_mode: 'HTML'})
+})
+.then(function(r){ return r.json(); }).then(onTgDone).catch(onTgFail);
+}
+function submitTrial() {
+if (window.isRandomMac) {
+alert("⚠️ Randomized MAC শনাক্ত হয়েছে!\n\nFree Trial চালু করতে আগে WiFi Settings থেকে\n\"Use device MAC\" সিলেক্ট করুন।");
+return;
+}
+if (window.isCriticalErrorActive) return;
+document.getElementById('trialConfirmModal').style.display = 'flex';
+var bubble = document.querySelector('.custom-skynet-bubble'); if (bubble) bubble.style.display = 'none';
+}
+function confirmTrialYes() {
+closeModal('trialConfirmModal');
+if (document.activeElement && document.activeElement.blur) { document.activeElement.blur(); }
+if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+window.scrollTo({top: 0, behavior: 'smooth'});
+var submitBtn = document.getElementById('submitBtn');
+var overlay = document.getElementById('timerOverlay');
+if (submitBtn) { submitBtn.classList.add('btn-disabled'); submitBtn.disabled = true; }
+if (overlay) {
+overlay.style.display = 'flex';
+overlay.innerHTML = 'ভেরিফাই হচ্ছে<span class="verify-dots"><span></span><span></span><span></span></span>';
+}
+let count = 3;
+var interval = setInterval(function() {
+count--;
+if (count <= 0) {
+clearInterval(interval);
+var trialUserInp = document.getElementById('trialUser');
+if (trialUserInp) { trialUserInp.value = 'T-' + (window.userMac || ''); }
+document.trialForm.submit();
+}
+}, 1000);
+}
+function copyNum() {
+const num = "01410867580";
+const textArea = document.createElement("textarea");
+textArea.value = num;
+document.body.appendChild(textArea);
+textArea.select();
+try {
+document.execCommand('copy');
+document.getElementById("btnText").innerText = "নম্বরটি কপি করা হয়েছে";
+} catch (err) { alert("নম্বরটি: " + num); }
+document.body.removeChild(textArea);
+setTimeout(() => { document.getElementById("btnText").innerText = "কপি করুন"; }, 2000);
+}
+</script>
+<a href="#" onclick="openTg(event)" class="custom-skynet-bubble" title="Live Chat Support">
+<svg viewBox="0 0 24 24">
+<path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
+</svg>
+<span class="tg-unread-badge" id="tgUnreadBadge"></span>
+</a>
+<div class="tg-overlay" id="tgOverlay">
+  <div class="tg-top-bar">
+    <button class="tg-back-btn" onclick="closeTg()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <div class="tg-top-title-wrap">
+      <div class="tg-top-title">SKY NET সাপোর্ট</div>
+      <div class="tg-top-sub"><span style="width:7px;height:7px;background:#3fd66b;border-radius:50%;display:inline-block;"></span>সাধারণত কয়েক মিনিটে রিপ্লাই করি</div>
+    </div>
+    <div style="width:36px;height:36px;flex-shrink:0;"></div>
+  </div>
+
+  <div class="tg-intro-panel" id="tgIntroPanel">
+    <div class="tg-intro-card">
+      <div class="tg-intro-icon">💬</div>
+      <div class="tg-intro-title">স্বাগতম!</div>
+      <div class="tg-intro-sub">চ্যাট শুরু করতে নিচের তথ্য দিন</div>
+      <div class="tg-field-wrap" id="tgNameField">
+        <input class="tg-input" id="tgName" type="text" maxlength="50" placeholder="আপনার নাম" onfocus="scrollToInput(this)" />
+      </div>
+      <div class="tg-status" id="tgIntroStatus"></div>
+      <button class="tg-intro-btn" onclick="startTgChat()">চ্যাট শুরু করুন</button>
+    </div>
+  </div>
+
+  <div class="tg-chat-body" id="tgChatBody">
+    <div class="tg-chat-log" id="tgChatLog"></div>
+  </div>
+
+  <div class="tg-composer" id="tgComposer">
+    <div class="tg-composer-inner">
+      <div class="tg-emoji-panel" id="tgEmojiPanel"></div>
+      <div class="tg-composer-row">
+        <div class="tg-textarea-wrap">
+          <textarea class="tg-textarea" id="tgMsg" placeholder="মেসেজ লিখুন..." maxlength="300" oninput="updateCounter()" onfocus="scrollToInput(this)" rows="1"></textarea>
+          <button type="button" class="tg-attach-btn" id="tgEmojiBtn" onclick="toggleEmojiPanel()">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--tg-attach-icon)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M8 14s1.5 2 4 2 4-2 4-2" stroke-linecap="round"/><line x1="9" y1="9.5" x2="9.01" y2="9.5" stroke-width="2.6"/><line x1="15" y1="9.5" x2="15.01" y2="9.5" stroke-width="2.6"/></svg>
+          </button>
+        </div>
+        <button class="tg-send-round" id="tgSendBtn" onclick="sendTg()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+      <div class="tg-status" id="tgStatus"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
