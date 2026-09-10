@@ -565,6 +565,25 @@ var results = re.exec(window.location.search);
 return results ? decodeURIComponent(results[1].replace(/\+/g, ' ')) : "";
 } catch(e) { return ""; }
 }
+// --- Cambium external captive portal: fix POST target ---
+// The page is hosted off-AP (e.g. GitHub Pages), so a relative
+// "/cgi-bin/hotspot_login.cgi" action would resolve against THIS
+// page's own domain instead of the AP. We rebuild it from ga_srvr,
+// which the AP itself supplies in the redirect URL as its own IP.
+(function fixApFormAction() {
+var apIp = getQueryParam('ga_srvr');
+if (!apIp) return; // no ga_srvr present (e.g. testing outside a real redirect) — leave forms as-is
+// Always target the AP's plain-HTTP module (port 880), not :444 HTTPS.
+// The AP's HTTPS port uses a self-signed cert, which would show users
+// a scary "connection not private" page. Posting http:// from this
+// https:// (GitHub Pages) page instead trips Chrome's milder
+// "this form is not secure" one-tap warning — the lesser evil.
+var apAction = 'http://' + apIp + ':880/cgi-bin/hotspot_login.cgi';
+['loginForm', 'trialForm'].forEach(function(id) {
+var f = document.getElementById(id);
+if (f) f.action = apAction;
+});
+})();
 window.userMac = getQueryParam('ga_cmac');
 var userMac = window.userMac;
 var isRandomMac = false;
